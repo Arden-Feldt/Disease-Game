@@ -22,11 +22,7 @@ public class ScoreCalculator {
       }
     } catch (IOException e) {
       System.out.println("ScoreCalculator Main is busted");
-      ;
     }
-
-    // Convert the ArrayList to a String array
-    String[] data = diseaseArray.toArray(new String[0]);
   }
 
   public static void updateScore(String input) {
@@ -60,6 +56,7 @@ public class ScoreCalculator {
   }
 
   public static boolean isDisease(String input) {
+    // TODO: Fix this!
     boolean isDisease = false;
     for (String diseaseName : diseaseArray) {
       if (input.equalsIgnoreCase(diseaseName)) {
