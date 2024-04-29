@@ -11,17 +11,16 @@ public class citiesTest {
         // TODO: Set up tests
         String csvFilePath =
                 "C:\\Users\\ethan\\IdeaProjects\\Disease-Game\\src\\main\\worldcities.csv";
-        int columnIndex = 1;
 
-        Cities cities = new Cities(csvFilePath, columnIndex);
+        Cities cities = new Cities(csvFilePath);
 
         // These values should be in it
-        assertTrue(cities.isInColumn("Tokyo"));
-        assertTrue(cities.isInColumn("Sidi Rahhal"));
-        assertTrue(cities.isInColumn("Boufatis"));
+        assertTrue(cities.has("Tokyo"));
+        assertTrue(cities.has("Sidi Rahhal"));
+        assertTrue(cities.has("Boufatis"));
 
         // I know these values are in it
-        assertTrue(cities.isInColumn("Doukouya"));
-        assertTrue(cities.isInColumn("Sanatikri"));
+        assertTrue(cities.has("Doukouya"));
+        assertTrue(cities.has("Sanatikri"));
     }
 }

@@ -8,9 +8,9 @@ import java.util.HashSet;
 public class Cities {
     private HashSet<String> cities;
 
-    public Cities (String csvFilePath, int columnIndex){
+    public Cities (String csvFilePath){
         this.cities = new HashSet<>();
-        readCSV(csvFilePath, columnIndex);
+        readCSV(csvFilePath, 1);
     }
 
     private void readCSV(String csvFilePath, int columnIndex) {
@@ -19,7 +19,7 @@ public class Cities {
             while ((line = br.readLine()) != null) {
                 String[] columns = line.split(",");
                 if (columns.length > columnIndex) {
-                    cities.add(columns[columnIndex]);
+                    cities.add(columns[columnIndex].toLowerCase());
                 }
             }
         } catch (IOException e) {
@@ -27,9 +27,9 @@ public class Cities {
         }
     }
 
-    public boolean isInColumn(String value) {
+    public boolean has(String value) {
         // TODO: Why does this always return false
-        return cities.contains(value);
+        return cities.contains(value.toLowerCase());
     }
 
     public HashSet<String> getCities() {

@@ -7,18 +7,21 @@ public class Main {
             "C:\\Users\\ethan\\IdeaProjects\\Disease-Game\\src\\main\\worldcities.csv";
     int columnIndex = 1;
 
-    Cities cities = new Cities(csvFilePath, columnIndex);
+    Cities cities = new Cities(csvFilePath);
 
     // These values should be in it
-    System.out.println(cities.isInColumn("Tokyo"));
-    System.out.println(cities.isInColumn("Sidi Rahhal"));
-    System.out.println(cities.isInColumn("Boufatis\n"));
+    System.out.println(cities.has("Tokyo"));
+    System.out.println(cities.has("Sidi Rahhal"));
+    System.out.println(cities.has("Boufatis"));
+
+    System.out.println(cities.getCities().contains("Boufatis"));
 
     // I know these values are in it
-    System.out.println(cities.isInColumn("Doukouya"));
-    System.out.println(cities.isInColumn("Sanatikri"));
+    System.out.println(cities.has("spisska nova ves"));
+    System.out.println(cities.has("karajgi"));
 
-    System.out.println(cities.getCities());
+    // "spisska nova ves", "poggibonsi", "sandomierz", "hatti", "khallikot", "reggane", "aglasun", "jalor", "harihar",
+    // "muzaffarabad", "oued tlelat"
 
     Player player = new Player();
     player.player();
