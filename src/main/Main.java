@@ -2,6 +2,7 @@ package main;
 
 public class Main {
   public static void main(String[] args) {
+    // TODO: Figure out why this is fucked
     String csvFilePath =
             "C:\\Users\\ethan\\IdeaProjects\\Disease-Game\\src\\main\\worldcities.csv";
     int columnIndex = 1;

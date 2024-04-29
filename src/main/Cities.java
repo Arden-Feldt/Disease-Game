@@ -28,6 +28,7 @@ public class Cities {
     }
 
     public boolean isInColumn(String value) {
+        // TODO: Why does this always return false
         return cities.contains(value);
     }
 
