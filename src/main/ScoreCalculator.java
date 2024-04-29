@@ -1,3 +1,5 @@
+package main;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +13,7 @@ public class ScoreCalculator {
 
   public static void populateDiseaseArray() {
     String csvFilePath =
-        "C:\\Users\\ethan\\IdeaProjects\\sidesite\\src\\diseaseDataset\\diseaseNames.csv";
+        "C:\\Users\\ethan\\IdeaProjects\\Disease-Game\\src\\diseaseDataset\\diseaseNames.csv";
 
     diseaseArray = new ArrayList<>();
 
@@ -21,15 +23,15 @@ public class ScoreCalculator {
         diseaseArray.add(line);
       }
     } catch (IOException e) {
-      System.out.println("ScoreCalculator Main is busted");
+      System.out.println("populator is busted");
     }
   }
 
   public static void updateScore(String input) {
-    if (isDisease(input) & stopRepeats(input)) {
-      if (input.length() >= 9 & !input.contains("cancer")) {
+    if (isDisease(input) && stopRepeats(input)) {
+      if (input.length() >= 9 && !input.contains("cancer")) {
         score += 3;
-      } else if (input.length() >= 6 & !input.contains("cancer")) {
+      } else if (input.length() >= 6 && !input.contains("cancer")) {
         score += 2;
       } else {
         score += 1;
@@ -56,11 +58,11 @@ public class ScoreCalculator {
   }
 
   public static boolean isDisease(String input) {
-    // TODO: Fix this!
     boolean isDisease = false;
     for (String diseaseName : diseaseArray) {
       if (input.equalsIgnoreCase(diseaseName)) {
         isDisease = true;
+        break;
       }
     }
     return isDisease;

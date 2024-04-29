@@ -1,3 +1,5 @@
+package main;
+
 public class Player {
     public void player(){
         Scenes scenes = new Scenes();
